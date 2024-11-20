@@ -84,7 +84,7 @@
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="static/logo.png" alt="Health Center Logo" class="rounded-circle logo-img">
-                AI MEDICAL DIAGNOSES
+                AI MEDICAL DIAGNOSES En
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -99,6 +99,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/developer">Developer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/symptoms">Symptoms</a>
                     </li>
                 </ul>
             </div>
@@ -123,8 +126,8 @@
             {% if predicted_disease %}
                 <div class="result-container mt-4">
                     <h4>Predicted Disease: {{ predicted_disease }}</h4>
-                    <p><strong>Description:</strong> {{ dis_des }}</p>
-                    <p><strong>Precautions:</strong> {{ my_precautions | join(', ') }}</p>
+                    <p><strong>Description:</strong> {{ description }}</p>
+                    <p><strong>Precautions:</strong> {{ precautions | join(', ') }}</p>
                     <p><strong>Medications:</strong> {{ medications | join(', ') }}</p>
                     <p><strong>Diet Recommendations:</strong> {{ my_diet | join(', ') }}</p>
                     <p><strong>Recommended Workouts:</strong> {{ workout | join(', ') }}</p>
