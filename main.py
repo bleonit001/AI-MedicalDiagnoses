@@ -11,17 +11,17 @@ app = Flask(__name__)
 
 # load databasedataset===================================
 # Assuming the files are in the 'datasets' folder in your project directory
-sym_des = pd.read_csv("/Users/bleonitshillova/Desktop/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning-main/dataset/symtoms_df.csv")
-precautions = pd.read_csv("/Users/bleonitshillova/Desktop/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning-main/dataset/precautions_df.csv")
-workout = pd.read_csv("/Users/bleonitshillova/Desktop/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning-main/dataset/workout_df.csv")
-description = pd.read_csv("/Users/bleonitshillova/Desktop/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning-main/dataset/description.csv")
-medications = pd.read_csv("/Users/bleonitshillova/Desktop/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning-main/dataset/medications.csv")
-diets = pd.read_csv("/Users/bleonitshillova/Desktop/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning-main/dataset/diets.csv")
+sym_des = pd.read_csv("dataset/symtoms_df.csv")
+precautions = pd.read_csv("dataset/precautions_df.csv")
+workout = pd.read_csv("dataset/workout_df.csv")
+description = pd.read_csv("dataset/description.csv")
+medications = pd.read_csv("dataset/medications.csv")
+diets = pd.read_csv("dataset/diets.csv")
 
 
 
 # load model===========================================
-svc = pickle.load(open('/Users/bleonitshillova/Desktop/Medicine-Recommendation-System-Personalized-Medical-Recommendation-System-with-Machine-Learning-main/svc.pkl','rb'))
+svc = pickle.load(open('//Users/bleonitshillova/Desktop/Medical-Diagnoses/svc.pkl','rb'))
 
 
 #============================================================
@@ -50,7 +50,7 @@ diseases_list = {15: 'Fungal infection', 4: 'Allergy', 16: 'GERD', 9: 'Chronic c
                 #   38: 'Urinary tract infection', 
                   35: 'Psoriasis', 27: 'Impetigo'}
 
-# Model Prediction function
+# Model Prediction functions
 def get_predicted_value(patient_symptoms):
     input_vector = np.zeros(132)
     normalized_symptoms = [s.lower().strip() for s in patient_symptoms]
