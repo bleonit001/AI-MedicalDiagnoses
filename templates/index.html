@@ -113,9 +113,10 @@
             <h2>Symptom Checker</h2>
             <form method="POST" action="/predict">
                 <div class="mb-3">
-                    <label for="symptoms" class="form-label">Enter Symptoms (comma-separated)</label>
-                    <input type="text" class="form-control" id="symptoms" name="symptoms" placeholder="e.g., headache, nausea" required>
-                </div>
+    <label for="symptoms" class="form-label">Enter Symptoms (comma-separated)</label>
+    <input type="text" class="form-control" id="symptoms" name="symptoms" placeholder="e.g., headache, nausea" required>
+    <ul id="suggestions-list" class="list-group mt-2" style="display:none;"></ul>
+</div>
                 <button type="submit" class="btn btn-primary">Check</button>
             </form>
 
